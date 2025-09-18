@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/Register/Sign Up/sign_up.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div>
+            <h1>EDUZAH TIMES</h1>
+            <p>Your Geteway to Trusted Knowledge!</p>
+        </div>
+
+        <div class="contact-form">
+            <h2 style="margin-left: 15px;">Sign Up</h2>
+            <form autocomplete="on" method="post" target="_blank" id="checkbox_form">
+                <input type="text" name="your_name" id="your_name" required placeholder="Your Name:">
+
+                <input type="email" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9]+\.[a-z]{2,}$" placeholder="Your Email:">
+
+                <input type="password" name="password" id="password" required placeholder="Password:">
+
+                <input type="password" name="password" id="password" required placeholder="Confirm Password:"><br>
+
+                <input type="checkbox" class="checkbox">
+                <label><a href="#">I agree to the terms and conditions.</a></label><br>
+
+                <script>
+                    document.getElementById("checkbox_form").onsubmit = function(e) {
+                    if (document.querySelectorAll('input[name="skill"]:checked').length === 0) {
+                        e.preventDefault();
+                        alert("You must choose.");
+                        }
+                        };
+                </script>
+
+                <button onclick="window.location.href='/HTML/index.html'">Submit</button>
+                <button onclick="window.location.href='/Register/Login/login.html'">Login</button>
+            </form>
+        </div>
+
+</body>
+</html>

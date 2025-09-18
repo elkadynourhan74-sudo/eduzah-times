@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/sports.css">
+    <title>sports</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+    <section class="header">
+    <h1>Sports</h1>
+    <p>Physical activities and games that involve skill, competition, and recreation. </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5" class="new">
+        <h2>The Importance of Sports in Daily Life</h2>
+        <p>
+
+            Sports play an essential role in maintaining a healthy lifestyle.
+            Regular physical activity improves cardiovascular health, strengthens muscles, and enhances flexibility.
+            Beyond physical health, sports also contribute to mental well-being.
+            Participating in sports reduces stress and anxiety, boosts self-confidence, and encourages discipline.
+            Team sports like football or basketball also teach teamwork, leadership, and communication skills.
+            Moreover, sports unite communities. Local games, national tournaments, and international competitions bring people together, fostering a sense of pride and belonging.</p>
+            In short, sports are not just about winning or losing—they are about improving health, building character, and creating strong social connections.</p>
+        </p>
+    </div>
+     <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+        <h2>The Rise of Women in Sports</h2>
+        <p>
+
+            For many years, sports were dominated by men, but today women are achieving remarkable success across the globe. From tennis champions like Serena Williams to football stars and Olympic athletes, women are breaking barriers and inspiring millions.
+
+            The rise of women in sports promotes gender equality. It shows that determination, skill, and passion are not limited by gender. More opportunities, sponsorships, and media coverage are now being directed toward female athletes.
+
+            However, challenges remain. Women often receive lower salaries and less recognition compared to men. Despite this, the progress is undeniable, and the future looks brighter for women in sports.
+
+            Ultimately, the success of female athletes is not just about sports—it’s about proving that women can lead, inspire, and achieve greatness in every field.</p>
+    </div>
+     <div data-date="2025-09-12" data-views="200" data-comments="30" class="most-active">
+        <h2>Technology and Modern Sports</h2>
+        <p>
+
+            Technology has transformed the world of sports in many ways. Advanced equipment, performance tracking devices, and video analysis tools help athletes improve their skills and prevent injuries.
+
+            Instant replay and VAR (Video Assistant Referee) systems have made competitions fairer by allowing referees to review decisions. Fitness apps and wearable devices also give athletes real-time data about their performance.
+
+            Fans benefit too. Live streaming, virtual reality, and interactive apps allow supporters to connect with their favorite teams from anywhere in the world.
+
+            Although some argue that technology takes away from the “human element” of sports, its advantages are undeniable. It makes sports safer, more exciting, and more accessible for athletes and fans alike.</p>
+    </div>
+    </div>
+     <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer>
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+    </script>
+    
+</body>
+</html>

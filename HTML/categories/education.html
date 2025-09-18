@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/education.css">
+    <title>education</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+
+   <section class="header">
+    <h1>Education</h1>
+    <p>Education is the process of gaining knowledge, skills, and values for personal and social growth </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5" class="new">
+        <h2>The Importance of Education in Modern Society</h2>
+        <p>
+
+            Education is one of the most powerful tools for personal and social development. It shapes individuals’ thinking, improves their decision-making, and prepares them for the future.
+
+            In modern society, education plays a key role in reducing poverty and inequality. It provides people with the skills needed to secure better jobs and improve their standard of living. Educated citizens are also more likely to participate in community activities and contribute to democratic processes.
+
+            Beyond academics, education helps develop soft skills such as communication, teamwork, and problem-solving. These skills are essential in both personal and professional life.
+
+            In short, education is more than just learning facts. It is the foundation of progress, equality, and a brighter future for individuals and societies.</p>
+    </div>
+     <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+        <h2>Online Learning and Its Advantages</h2>
+        <p>
+
+            In recent years, online learning has become increasingly popular. With the rise of digital platforms, students can now access lessons, courses, and even degrees from anywhere in the world.
+
+            One of the main advantages of online learning is flexibility. Students can learn at their own pace and choose times that suit their schedules. This is especially helpful for working professionals or parents who want to continue their education.
+
+            Online learning is also cost-effective. Many courses are free or cheaper than traditional classes, making education accessible to more people. Additionally, students can save money on transportation, housing, and textbooks.
+
+            However, online learning also requires discipline and self-motivation. Without the structure of a classroom, some students may struggle to stay focused. Despite this, the benefits often outweigh the challenges, and online education is likely to grow even more in the future.</p>
+    </div>
+     <div data-date="2025-09-12" data-views="200" data-comments="30" class="most-active">
+        <h2>The Role of Teachers in Education</h2>
+        <p>
+
+            Teachers are the backbone of education. They do more than just deliver knowledge—they inspire, motivate, and shape the future of their students.
+
+            A good teacher not only explains lessons but also encourages critical thinking, creativity, and curiosity. Teachers also act as role models, influencing the character and values of young people.
+
+            In many countries, teachers face challenges such as low salaries, lack of resources, and overcrowded classrooms. Despite these difficulties, many continue their work with dedication because they believe in the power of education.
+
+            The role of teachers is evolving in the digital age. They are no longer just information providers; they are mentors who guide students in how to use technology and information responsibly.
+
+            In conclusion, teachers play a vital role in shaping society. By supporting and respecting them, we invest in the future of education and the next generation.</p>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer> 
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+    </script>
+
+</body>
+</html>

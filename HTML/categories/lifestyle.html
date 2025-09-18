@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/lifestyle.css">
+    <title>lifestyle</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+
+    <section class="header">
+    <h1>Lifestyle</h1>
+    <p>Lifestyle is the way a person lives, including daily habits, choices, and activities </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5"class="new">
+        <h2>The Benefits of a Minimalist Lifestyle</h2>
+        <p>
+
+            In today’s fast-paced world, many people are choosing minimalism as a way of life. Minimalism means focusing on what truly matters and removing unnecessary possessions, habits, and distractions.
+
+           The benefits of a minimalist lifestyle are many. First, it reduces stress. A home free of clutter creates a peaceful environment where the mind can relax. Second, minimalism saves money. By buying fewer things, people can invest in experiences or save for the future.
+
+            Minimalism also promotes sustainability. Consuming less means producing less waste, which helps protect the environment. Many minimalists choose to buy high-quality products that last longer instead of cheap items that break quickly.
+
+            Of course, minimalism does not mean living with nothing. It means being intentional—choosing things that add value to life. For some, this may be travel; for others, it may be family time.
+
+            In the end, minimalism is about freedom. By letting go of excess, people gain more time, money, and energy for what truly matters.</p>
+    </div>
+     <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+        <h2>The Role of Fitness in a Healthy Lifestyle</h2>
+        <p>
+
+            Fitness is one of the most important aspects of a balanced lifestyle. Regular physical activity keeps the body strong, improves mental health, and reduces the risk of chronic diseases.
+
+            There are many ways to stay fit. Some people enjoy going to the gym, while others prefer running, cycling, or yoga. Even simple activities like walking daily or using the stairs instead of elevators can improve health.
+
+            Fitness also has psychological benefits. Exercise releases endorphins, often called “happy hormones,” which reduce stress and improve mood. For students and professionals, staying active can also increase concentration and productivity.
+
+            However, many people struggle to find time for fitness. Busy schedules, lack of motivation, or financial limits can make it difficult. The key is to start small. Ten minutes of stretching or a short walk every day can build the habit.
+
+            A healthy lifestyle is incomplete without physical activity. By making fitness a daily priority, people can enjoy a longer, healthier, and happier life.</p>
+    </div>
+     <div data-date="2025-09-12" data-views="200" data-comments="30" class="most-active">
+        <h2>Work-Life Balance in Modern Society</h2>
+        <p>
+
+            Modern life is full of challenges, and one of the biggest is achieving work-life balance. With long working hours, constant emails, and economic pressures, many people find it difficult to separate their jobs from personal lives.
+
+            A poor work-life balance can lead to stress, burnout, and health problems. It can also affect family relationships, as people spend less time with loved ones. On the other hand, a good balance improves well-being, productivity, and overall happiness.
+
+            Technology plays both a positive and negative role. While laptops and smartphones allow people to work from anywhere, they also make it harder to “switch off.” This is why many experts recommend setting boundaries, such as not checking emails after work hours.
+
+            Companies are beginning to recognize the importance of balance. Flexible hours, remote work options, and wellness programs are becoming more common. At the same time, individuals must take responsibility by setting priorities and making time for rest, hobbies, and social life.
+
+            Work is important, but life is more than a job. Achieving balance is the key to living a fulfilling lifestyle.</p>
+    </div>
+    </div>
+     <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer>
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+</script>
+
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: 'Acme';
+    src: url("/Acme/Acme-Regular.ttf");
+}
+
+body{
+    font-family: Acme;
+}
+
+nav{background:rgb(39, 28, 90);padding:10px;text-align:right}
+.dropbtn{background:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;margin-bottom: 0;}
+.dropdown{position:relative;display:inline-block}
+.dropdown-content{display:none;position:absolute;right:0;background:#fff;min-width:150px;box-shadow:0 0 5px #ccc;border-radius: 5px;}
+.dropdown-content button{width:100%;border:0;background:0;padding:10px;text-align:right;cursor:pointer}
+.dropdown-content button:hover{background:#e3e3e3}
+.dropdown:hover .dropdown-content{display:block}
+
+.header {
+    background-image: url(https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat ;
+    color: azure;
+    height: 350px;
+    margin-bottom: 100px;
+    text-align: left;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+.header h1 {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+.header p {
+    font-size: small;
+}
+.articles div {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #ccc;
+    margin-bottom: 100px;
+    line-height: 1.5rem;
+    padding-right: 50px;
+
+
+}
+.articles div h2 {
+    margin-bottom: 30px;
+}
+footer {
+    background-color: rgb(39, 28, 90);
+    padding: 40px;
+    text-align: center;
+}
+footer p {
+    color: #e3e3e3;
+}

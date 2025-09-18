@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/tecnology.css">
+    <title>tecnology</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+    <section class="header">
+    <h1>Tecnology</h1>
+    <p>Technology is the use of knowledge and tools to make life easier and solve problems </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5" class="new">
+        <h2> The Rise of Artificial Intelligence in Everyday Life</h2>
+
+        <p>Artificial Intelligence (AI) has moved from being a futuristic concept to becoming part of our daily lives. From voice assistants like Siri and Alexa to recommendation systems on Netflix and YouTube, AI shapes how we interact with technology.
+
+        One of the most important impacts of AI is in healthcare.
+         AI systems are now used to analyze X-rays, predict disease risks, and even suggest personalized treatment plans. This reduces human error and gives doctors more time to focus on patients.
+
+        In education, AI tools like ChatGPT are changing how students learn.
+         They can get explanations, summaries, and even practice conversations in foreign languages. This makes education more interactive and accessible to people around the world.
+
+        Of course, there are challenges. Many people worry that AI may replace human jobs, especially in industries like manufacturing or customer service. There are also concerns about data privacy, since AI systems often rely on huge amounts of personal data.
+
+        Looking forward, AI is not going away—it will only grow stronger.
+         The challenge for societies is to balance innovation with ethics and make sure AI is used responsibly.</p>
+    </div>
+    <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+       <h2> How Technology is Transforming Education</h2>
+
+        <p>Technology has revolutionized education in the last two decades. The shift became most visible during the COVID-19 pandemic, when schools and universities had to move online almost overnight.
+
+            E-learning platforms such as Coursera, Udemy, and Khan Academy have made high-quality education available to anyone with internet access. A student in Africa can now take the same computer science course as someone in the United States. This has reduced the gap in knowledge between different parts of the world.
+
+            Virtual reality (VR) and augmented reality (AR) are also changing classrooms. Instead of reading about the solar system, students can now “visit” planets through VR headsets. Similarly, AR can bring textbooks to life by adding interactive 3D models.
+
+            But technology in education also has downsides. Some students lack stable internet or devices, which creates inequality. There are also concerns that students may rely too much on AI or online tools and lose critical thinking skills.
+
+            Nevertheless, technology is here to stay in education. The future classroom will likely be a hybrid space where digital tools support, but do not replace, human teachers.</p>
+    </div>
+    <div data-date="2025-09-12" data-views="200" data-comments="30" class="most-active">
+
+        <h2> The Future of Green Technology</h2>
+
+         <p>As climate change becomes one of the most urgent global challenges, green technology is emerging as a powerful solution. Green technology refers to innovations that reduce environmental damage and promote sustainability.
+
+            Renewable energy is at the heart of this movement. Solar and wind power are now cheaper than fossil fuels in many regions. Countries are investing in large solar farms and offshore wind projects to cut carbon emissions.
+
+            Electric vehicles (EVs) are another example. Companies like Tesla, BYD, and traditional automakers are producing EVs at scale. With battery technology improving, EVs are becoming more affordable and can travel longer distances.
+
+            Smart cities are also part of the green revolution. Sensors and IoT devices are used to monitor energy use, manage waste, and improve public transportation. This reduces pollution and makes cities more efficient.
+
+            Green technology faces challenges such as high initial costs and resistance from industries that depend on fossil fuels. However, global awareness is pushing governments and companies toward sustainable practices.
+
+            In the next decade, green technology may define not only the fight against climate change but also the future of global.</p>
+    </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer>
+
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+    </script>
+    
+</body>
+</html>

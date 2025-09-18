@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/health.css">
+    <title>Health</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+     <section class="header">
+    <h1>Health</h1>
+    <p>Health is the state of physical, mental, and social well-being, not just the absence of disease </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5" class="new">
+        <h2>The Importance of Mental Health</h2>
+        <p>
+            Health is not only about the body but also about the mind. Mental health has become a major topic of discussion in recent years because it affects every part of our lives—our relationships, our work, and our overall well-being.
+
+            Stress, anxiety, and depression are common mental health challenges. They can result from work pressure, financial problems, or personal issues. Unfortunately, in many societies, mental health is still stigmatized, and people are afraid to seek help.
+
+            Maintaining good mental health requires balance. Exercise, meditation, and healthy social connections can reduce stress and improve mood. Talking openly about mental health is also essential. When people feel safe to share their struggles, they are more likely to find support.
+
+            Governments and institutions are starting to invest more in mental health services, but much more needs to be done. Affordable therapy, awareness campaigns, and education about emotional well-being should become priorities.
+
+            In the end, mental health is just as important as physical health. By caring for our minds, we can build happier, healthier societies.</p>
+    </div>
+     <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+        <h2>The Role of Nutrition in a Healthy Lifestyle</h2>
+        <p>
+            “You are what you eat” is more than just a saying—it is a reality. Nutrition plays a vital role in health and can prevent many diseases. A balanced diet that includes fruits, vegetables, proteins, and whole grains provides the body with the energy and nutrients it needs.
+
+            Poor eating habits, on the other hand, are linked to obesity, diabetes, and heart disease. Processed foods high in sugar, salt, and unhealthy fats are harmful when consumed in excess. Unfortunately, these foods are often cheaper and more accessible than healthier options.
+
+            Education about nutrition is essential, especially for children. Schools that provide healthy meals and teach students about food choices can create long-lasting positive habits.
+
+            Governments also play a role by setting food regulations, labeling requirements, and supporting public health campaigns. On a personal level, small changes—like drinking more water, reducing sugary drinks, and cooking at home—can make a big difference.
+
+            Good nutrition is the foundation of a healthy life. By making conscious choices, people can protect their health and enjoy higher quality of life.</p>
+    </div>
+     <div data-date="2025-09-12" data-views="200" data-comments="30"  class="most-active">
+        <h2>The Future of Healthcare Technology</h2>
+        <p>
+
+            Technology is transforming healthcare at a rapid pace. From wearable devices to advanced medical robots, innovation is improving how doctors diagnose, treat, and prevent diseases.
+
+            One example is telemedicine. Patients can now consult doctors through video calls, making healthcare accessible to people in remote areas. Wearable devices such as smartwatches track heart rate, sleep, and physical activity, giving doctors valuable real-time data.
+
+            Artificial Intelligence (AI) is another powerful tool in healthcare. AI algorithms can analyze X-rays, detect cancer cells, and even predict outbreaks. This allows doctors to act faster and with greater accuracy.
+
+            However, healthcare technology also faces challenges. Not everyone has access to advanced tools, and data privacy remains a concern. Patients worry about how their health information is stored and used.
+
+            Despite these challenges, the future looks promising. As technology continues to advance, healthcare will become more personalized, efficient, and accessible. The combination of human expertise and digital innovation could save millions of lives.</p>
+    </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer>
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+    </script>
+
+    
+</body>
+</html>

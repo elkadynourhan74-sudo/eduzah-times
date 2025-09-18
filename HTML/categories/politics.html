@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/categories/politics.css">
+    <title>politics</title>
+</head>
+<body>
+    <nav>
+     <div class="dropdown">
+            <button class="dropbtn">sotr by▾</button>
+            <div class="dropdown-content">
+                <button data-sort="latest">latest</button>
+                <button data-sort="views">most reads</button>
+                <button data-sort="comments">most active</button>
+            </div>
+     </div>
+    </nav>
+     <section class="header">
+    <h1>politics</h1>
+    <p>The activities and principles of governing, decision-making, and managing public affairs. </p>
+    </section>
+    <div class="articles" id="list">
+    <div data-date="2025-09-13" data-views="100" data-comments="5"  class="new">
+        <h2>The Importance of Democracy in Modern Politics</h2>
+        <p>Democracy is one of the most significant political systems in the modern world. At its core, democracy gives power to the people by allowing them to choose their leaders through free and fair elections.
+
+        One of the greatest strengths of democracy is accountability. Elected leaders must listen to the citizens who voted them into power. If they fail to deliver on promises, people can remove them in the next election. This ensures that governments remain connected to the needs of the people.
+
+        Democracy also promotes freedom of speech and equality. Citizens can express their opinions, criticize government actions, and campaign for change. This creates a society where diverse voices are heard, and progress is possible.
+
+        However, democracy is not perfect. In many countries, voter turnout is low, and misinformation can spread through social media, influencing elections unfairly. Corruption and political polarization are also major threats to democratic systems.
+
+        Despite its flaws, democracy remains the best-known system for protecting human rights and ensuring fair representation. The future of democracy depends on citizens staying engaged, informed, and committed to justice.</p>
+    </div>
+    <div data-date="2025-09-10" data-views="500" data-comments="15" class="most-reads">
+            <h2>Globalization and Politics in the 21st Century</h2>
+            <p>Globalization has reshaped politics around the world. Nations are now more interconnected than ever before through trade, technology, and communication. Political decisions made in one country often affect people thousands of miles away.
+            Economically, globalization has created opportunities. Developing countries can access global markets and attract investments, while consumers enjoy cheaper products. However, globalization also increases competition, and many local industries struggle to survive.
+            Politically, globalization has led to cooperation through organizations such as the United Nations, the European Union, and the World Trade Organization. Countries collaborate on issues like climate change, security, and trade agreements.
+            But globalization also creates tensions. Many people feel that it threatens national identity and sovereignty. Immigration has become a controversial issue, with debates about cultural integration and border security. Populist movements have risen in many countries as a reaction against globalization.
+            In the future, politics will need to balance global cooperation with national interests. The challenge for leaders is to ensure that globalization benefits everyone, not just the wealthy and powerful.</p>
+    </div>
+    <div data-date="2025-09-12" data-views="200" data-comments="30" class="most-active">
+        <h2>The Role of Youth in Politics</h2>
+        <p>
+        Young people have always been powerful drivers of political change. In recent years, youth movements have gained global attention, from climate strikes to protests for social justice and human rights.
+        The role of youth in politics is important for several reasons. First, young people represent the future of society. Their participation ensures that political decisions reflect the needs of future generations, not just the present. Second, they bring new ideas and energy to political debates, challenging traditional ways of thinking.
+        Technology has made it easier for young people to engage in politics. Social media platforms give them a voice to spread awareness, organize protests, and influence public opinion. Many politicians now use social media to connect with younger voters.
+        However, young people still face challenges in politics. In many countries, voter age restrictions, lack of resources, and limited opportunities make it difficult for them to participate fully. Older generations often dominate leadership positions, leaving youth voices unheard.
+        For politics to be truly representative, governments and institutions must encourage youth participation. This can be done by lowering voting ages, creating youth councils, and supporting education about civic responsibility.</p>
+    </div>
+    </div>
+     <footer>
+        <p>&copy; 2025 EDUZAH. All rights reserved </p>
+    </footer>
+    <script>
+        const list=document.getElementById("list");
+        document.querySelectorAll(".dropdown-content button").forEach(btn=>{
+        btn.onclick=()=>{
+        let items=[...list.children];
+        items.sort((a,b)=>{
+            if(btn.dataset.sort==="latest") return new Date(b.dataset.date)-new Date(a.dataset.date);
+            if(btn.dataset.sort==="views") return b.dataset.views-a.dataset.views;
+            return b.dataset.comments-a.dataset.comments;
+        });
+        list.append(...items);
+        }
+        });
+    </script>
+
+    
+</body>
+</html>
