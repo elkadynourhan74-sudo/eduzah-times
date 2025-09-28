@@ -8,7 +8,7 @@
 
 @font-face{
     font-family: 'Acme';
-    src: url("/Acme/Acme-Regular.ttf");
+    src: url("Acme/Acme-Regular.ttf");
 }
 
 body{
