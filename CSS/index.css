@@ -25,6 +25,8 @@ html{
     left: 0;
     background-color: burlywood;
     gap: 20px;
+    display: flex;
+    justify-content: space-between;
     z-index: 1000;
 }
 
@@ -61,14 +63,14 @@ html{
 
 input[type="checkbox"] {display:none}
 .icon {cursor:pointer}
-.search {width:0;opacity:0;transition:.3s;margin-right: 400px;}
+.search {width:0;opacity:0;transition:.3s;margin-right: 400px} 
 input[type="checkbox"]:checked ~ .search {width:150px;opacity:1;background-color: white;border-radius: 8px;border: none;padding: 5px;}
 
-.dropdown {list-style:none;margin:0;padding:0;background:#333;display:flex;border-radius: 20px;}
+.dropdown {list-style:none;margin:0;padding:0;background:#333;display:flex;border-radius: 5px;}
     li{position:relative}
     a{display:block;padding:10px 15px;color:#fff;text-decoration:none}
-    .dropdown a:hover{background:#555}
-    li .dropdown{display:none;position:absolute;top:100%;left:0;background:#716d6d}
+    .dropdown a:hover{text-decoration-line: underline;}
+    li .dropdown{display:none;position:absolute;top:100%;left:0;background:#fff}
     li:hover .dropdown{display:block}
 
 
@@ -152,7 +154,7 @@ input[type="checkbox"]:checked ~ .search {width:150px;opacity:1;background-color
 }
 
 input{
-    background-color: rgb(86, 5, 5);
+    background-color: #fff;
     border-radius: 50px;
     border: 2px solid;
     width: 70%;
@@ -163,10 +165,10 @@ input{
 }
 
 textarea{
-    background-color: rgb(86, 5, 5);
+    background-color:#fff;
     border-radius: 25px;
     width: 70%;
-    border: 2px solid;
+    border: 2px solid ;
     margin-left: 25px;
     font-weight: bold;
 }
@@ -243,15 +245,16 @@ footer a:hover {
 
 .footer-links{
     list-style: none;
-    display: flex;
+     display: flex;
     align-items: center;
     padding: 10px;
-    gap: 50px;
+    gap: 50px; 
+   
 }
 
 .div-links {
     display: flex;
-    gap: 10px;
+    gap: 10px; 
 }
 
 .categories {
