@@ -24,25 +24,22 @@ html{
     top: 0;
     left: 0;
     background-color: burlywood;
-    gap: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .logo{
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    margin: 5px;
 }
 
 .nav-links{
     list-style: none;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    gap: 20px;
-    justify-content: center;
+     display: flex;
 }
 
 .nav-links li a{
@@ -57,7 +54,7 @@ html{
     transition:color 0.4s; 
 }
 
-.ticker{background:#0b63a4;color:#fff;overflow:hidden;white-space:nowrap;padding:6px;z-index:999;}
+.ticker{background:#0b63a4;color:#fff;overflow:hidden;white-space:nowrap;padding:6px;z-index:1;}
 .ticker span{display:inline-block;padding-left:100%;animation:scroll 15s linear infinite}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 
