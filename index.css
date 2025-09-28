@@ -72,7 +72,7 @@ input[type="checkbox"]:checked ~ .search {width:150px;opacity:1;background-color
 
 
 .hero {
-    background-image:url(/Images/Hero.jpg);
+    background-image:url(Images/Hero.jpg);
     background-size: cover;
     background-position: center;
     background-repeat:no-repeat ;
